@@ -1,0 +1,18 @@
+name: "My Repository"
+suites:
+  - name: "My first validation suite"
+    rules:
+      - name: "All input pins must have type"
+        message: "Not all input pins do have a type"
+        severity: error
+        language: groovy
+        type: "IAction"
+        script: |
+          return arg1.inputs.every { pin -> pin.base != null }
+      - name: "All output pins must have type"
+        message: "Not all output pins do have a type"
+        severity: error
+        language: groovy
+        type: "IAction"
+        script: |
+          return arg1.outputs.every { pin ->pin.base != null }

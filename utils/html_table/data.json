@@ -1,0 +1,60 @@
+{
+	"results": [
+		{
+			"rule-name": "My Custom Validation Rule",
+			"rule-message": "The element's name shall start with 'custom'",
+			"rule-severity": "ERROR",
+			"element-name": "With typed input pin",
+			"element-type": "IAction",
+			"element-id": "_NwD5cMN3Ee-ppI8rFSr4CQ"
+		},
+		{
+			"rule-name": "My Custom Validation Rule",
+			"rule-message": "The element's name shall start with 'custom'",
+			"rule-severity": "ERROR",
+			"element-name": "Without typed output pin",
+			"element-type": "IAction",
+			"element-id": "_OPwtMMN3Ee-ppI8rFSr4CQ"
+		},
+		{
+			"rule-name": "All output pins must have type",
+			"rule-message": "Not all output pins do have a type",
+			"rule-severity": "ERROR",
+			"element-name": "Without typed output pin",
+			"element-type": "IAction",
+			"element-id": "_OPwtMMN3Ee-ppI8rFSr4CQ"
+		},
+		{
+			"rule-name": "My Custom Validation Rule",
+			"rule-message": "The element's name shall start with 'custom'",
+			"rule-severity": "ERROR",
+			"element-name": "With no pin",
+			"element-type": "IAction",
+			"element-id": "_SA9t8MN3Ee-ppI8rFSr4CQ"
+		},
+		{
+			"rule-name": "My Custom Validation Rule",
+			"rule-message": "The element's name shall start with 'custom'",
+			"rule-severity": "ERROR",
+			"element-name": "Without typed input pin",
+			"element-type": "IAction",
+			"element-id": "_GW_9AMN-Ee-Qm-4OuMAxKg"
+		},
+		{
+			"rule-name": "All input pins must have type",
+			"rule-message": "Not all input pins do have a type",
+			"rule-severity": "ERROR",
+			"element-name": "Without typed input pin",
+			"element-type": "IAction",
+			"element-id": "_GW_9AMN-Ee-Qm-4OuMAxKg"
+		},
+		{
+			"rule-name": "My Custom Validation Rule",
+			"rule-message": "The element's name shall start with 'custom'",
+			"rule-severity": "ERROR",
+			"element-name": "With typed output pin",
+			"element-type": "IAction",
+			"element-id": "_MLttoMN-Ee-Qm-4OuMAxKg"
+		}
+	]
+}

@@ -1,0 +1,37 @@
+name: "My Repository"
+suites:
+  - name: "My first validation suite"
+    rules:
+      - name: "Validation rule 1"
+        message: "Model element name does not start with First"
+        severity: error
+        language: groovy
+        type: "INamedElement"
+        script: |
+          return arg1.name.startsWith("First")
+      - name: "Validation rule 2"
+        message: "This will always fail"
+        severity: info
+        language: groovy
+        script: |
+          return false
+      - name: "Validation rule 3"
+        message: "Validation will never fail"
+        severity: info
+        language: groovy
+        script: |
+          return true
+  - name: "My second validation suite"
+    rules:
+      - name: "Validation rule S2-1"
+        message: "Validation rule S2-1 failed"
+        severity: error
+        language: groovy
+        script: |
+          return true
+      - name: "Validation rule S2-2"
+        message: "Validation rule S2-2 failed"
+        severity: info
+        language: groovy
+        script: |
+          return false
