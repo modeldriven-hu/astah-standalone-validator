@@ -77,26 +77,34 @@ public class AstahModelValidator {
                 continue;
             }
 
-            logger.trace("Validating id = '{}', name = '{}', type = '{}'", modelElement.id(), modelElement.name(), modelElement.type());
+            validateModelElement(repository, modelElement, results);
 
-            for (var suite : repository.validationSuites()) {
-                for (var rule : suite.validatorRules()) {
-                    switch (rule.validate(modelElement)) {
-                        case INVALID:
-                            logger.trace("[{}] '{}' failed", rule.severity().name(), rule.name());
-                            handleValidationError(rule, modelElement, results);
-                            break;
-
-                        case VALID:
-                            logger.trace("[{}] '{}' passed", rule.severity().name(), rule.name());
-                            break;
-
-                        case SKIPPED:
-                            logger.trace("[{}] '{}' skipped", rule.severity().name(), rule.name());
-                    }
-                }
+            for (var attribute : modelElement.attributes()) {
+                validateModelElement(repository, attribute, results);
             }
 
+        }
+    }
+
+    private void validateModelElement(ValidationRepository repository, ModelElement modelElement, JsonArray results) throws ValidationFailedException {
+        logger.trace("Validating id = '{}', name = '{}', type = '{}'", modelElement.id(), modelElement.name(), modelElement.type());
+
+        for (var suite : repository.validationSuites()) {
+            for (var rule : suite.validatorRules()) {
+                switch (rule.validate(modelElement)) {
+                    case INVALID:
+                        logger.trace("[{}] '{}' failed", rule.severity().name(), rule.name());
+                        handleValidationError(rule, modelElement, results);
+                        break;
+
+                    case VALID:
+                        logger.trace("[{}] '{}' passed", rule.severity().name(), rule.name());
+                        break;
+
+                    case SKIPPED:
+                        logger.trace("[{}] '{}' skipped", rule.severity().name(), rule.name());
+                }
+            }
         }
     }
 

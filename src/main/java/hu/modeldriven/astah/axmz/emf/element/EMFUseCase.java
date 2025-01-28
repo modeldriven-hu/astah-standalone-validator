@@ -70,7 +70,7 @@ public class EMFUseCase extends EMFNamedElement implements IUseCase {
 
     @Override
     public IAttribute[] getAttributes() {
-        throw new NotImplementedException();
+        return new IAttribute[0];
     }
 
     @Override

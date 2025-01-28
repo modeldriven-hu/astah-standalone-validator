@@ -45,7 +45,7 @@ public class EMFType extends EMFNamedElement implements IClass {
 
     @Override
     public IAttribute[] getAttributes() {
-        throw new NotImplementedException();
+        return new IAttribute[0];
     }
 
     @Override

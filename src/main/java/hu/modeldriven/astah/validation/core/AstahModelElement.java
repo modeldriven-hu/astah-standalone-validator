@@ -1,7 +1,10 @@
 package hu.modeldriven.astah.validation.core;
 
+import com.change_vision.jude.api.inf.model.IClass;
 import com.change_vision.jude.api.inf.model.INamedElement;
 import hu.modeldriven.astah.validation.api.ModelElement;
+
+import java.util.List;
 
 public class AstahModelElement implements ModelElement {
 
@@ -9,6 +12,15 @@ public class AstahModelElement implements ModelElement {
 
     public AstahModelElement(INamedElement element) {
         this.element = element;
+    }
+
+    @Override
+    public List<? extends ModelElement> attributes() {
+        if (element instanceof IClass clazz) {
+            return List.of(clazz.getAttributes()).stream().map(AstahModelElement::new).toList();
+        }
+
+        return List.of();
     }
 
     @Override

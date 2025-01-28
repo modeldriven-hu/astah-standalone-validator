@@ -50,4 +50,9 @@ public class AstahPackageableElement implements ModelPackage {
 
         return list;
     }
+
+    @Override
+    public List<? extends ModelElement> attributes() {
+        return List.of();
+    }
 }
