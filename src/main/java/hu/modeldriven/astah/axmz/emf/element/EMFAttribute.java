@@ -6,13 +6,16 @@ import org.eclipse.uml2.uml.Property;
 
 public class EMFAttribute extends EMFNamedElement implements IAttribute {
 
+    private final Property property;
+
     public EMFAttribute(Property property) {
         super(property);
+        this.property = property;
     }
 
     @Override
     public IClass getType() {
-        return null;
+        return new EMFType(property.getType());
     }
 
     @Override
@@ -72,7 +75,7 @@ public class EMFAttribute extends EMFNamedElement implements IAttribute {
 
     @Override
     public IMultiplicityRange[] getMultiplicity() {
-        throw new NotImplementedException();
+        return new EMFMultiplicityRange[]{new EMFMultiplicityRange(property.getLowerValue(), property.getUpperValue())};
     }
 
     @Override
