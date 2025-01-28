@@ -1,0 +1,11 @@
+name: "My Repository"
+suites:
+  - name: "My first validation suite"
+    rules:
+      - name: "Multiplicity"
+        message: "Multiplicity has to be set"
+        severity: error
+        language: groovy
+        type: "IAttribute"
+        script: |
+          return arg1.multiplicity != null && arg1.multiplicity[0].lower != -100 && arg1.multiplicity[0].upper != -100
