@@ -11,8 +11,8 @@ import java.net.URLClassLoader;
 
 public class BytecodeExecutor implements ScriptExecutor {
 
-    private final Logger logger = LoggerFactory.getLogger(getClass().getName());
     private static final String SEPARATOR = ";";
+    private final Logger logger = LoggerFactory.getLogger(getClass().getName());
 
     @Override
     public Object execute(String script, Object argument) throws ScriptExecutionException {

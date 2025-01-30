@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ext="http://astah.net/model/1.0.0/Extension" xmlns:sysml="http://www.omg.org/spec/SysML/20161101/SysML" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_5jrDQN2OEe-4-bctC6GOIA" name="Root">
+    <packagedElement xmi:type="uml:Package" xmi:id="_8gFxEN2OEe-4-bctC6GOIA" name="Package1">
+      <packagedElement xmi:type="uml:Class" xmi:id="_9OJw8N2OEe-4-bctC6GOIA" name="Block1">
+        <ownedAttribute xmi:id="_-jP7oN2OEe-4-bctC6GOIA" name="emptyMultiplicity" visibility="public" aggregation="composite">
+          <xmi:Extension extender="http://astah.net/model/1.0.0/Extension" id="_UDHTEN4qEe-tseZE84lY5g.0">
+            <contents xmi:type="ext:ExtraInfo" xmi:id="_UDJvUN4qEe-tseZE84lY5g" definition="My emptyMultiplicity in Block 1"/>
+          </xmi:Extension>
+          <type xmi:type="uml:DataType" href="pathmap://SysML15_PROFILES/SysML.profile.uml#SysML_dataType.Real"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="__8LdcN2OEe-4-bctC6GOIA" name="optional" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://SysML15_PROFILES/SysML.profile.uml#SysML_dataType.Real"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A68LwN2PEe-4-bctC6GOIA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A68Lwd2PEe-4-bctC6GOIA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_BptWQN2PEe-4-bctC6GOIA" name="mandatory" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://SysML15_PROFILES/SysML.profile.uml#SysML_dataType.Real"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CkwpQN2PEe-4-bctC6GOIA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CkzskN2PEe-4-bctC6GOIA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_DQ_dIN2PEe-4-bctC6GOIA" name="list_zero_star" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://SysML15_PROFILES/SysML.profile.uml#SysML_dataType.Real"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FA4tcN2PEe-4-bctC6GOIA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FA7wwN2PEe-4-bctC6GOIA" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_HGOpUN2PEe-4-bctC6GOIA" name="list_star" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://SysML15_PROFILES/SysML.profile.uml#SysML_dataType.Real"/>
+          <lowerValue xmi:type="uml:LiteralString" xmi:id="_H9IcIN2PEe-4-bctC6GOIA" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_H9LfcN2PEe-4-bctC6GOIA" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_IkhMQN2PEe-4-bctC6GOIA" name="list_one_star" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://SysML15_PROFILES/SysML.profile.uml#SysML_dataType.Real"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J5aioN2PEe-4-bctC6GOIA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J5aiod2PEe-4-bctC6GOIA" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_1L01EN2VEe-e_5dgwr0T0g" name="Value Type1">
+        <ownedAttribute xmi:id="_2EdtQN2VEe-e_5dgwr0T0g" name="emptyMultiplicity" visibility="public" aggregation="composite">
+          <xmi:Extension extender="http://astah.net/model/1.0.0/Extension" id="_Vbur0N4qEe-tseZE84lY5g.0">
+            <contents xmi:type="ext:ExtraInfo" xmi:id="_Vbur0d4qEe-tseZE84lY5g" definition="My emptyMultiplicity in Value Type 1"/>
+          </xmi:Extension>
+          <type xmi:type="uml:DataType" href="pathmap://SysML15_PROFILES/SysML.profile.uml#SysML_dataType.Real"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_3XCvcN2VEe-e_5dgwr0T0g" name="mandatory" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://SysML15_PROFILES/SysML.profile.uml#SysML_dataType.Real"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4JOaUN2VEe-e_5dgwr0T0g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4JOaUd2VEe-e_5dgwr0T0g" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_srL8YN4nEe-tseZE84lY5g" name="Documentation">
+        <xmi:Extension extender="http://astah.net/model/1.0.0/Extension" id="_t-FHoN4nEe-tseZE84lY5g.0">
+          <contents xmi:type="ext:ExtraInfo" xmi:id="_t-G80N4nEe-tseZE84lY5g" definition="Here comes my documentation"/>
+        </xmi:Extension>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_5jvUsN2OEe-4-bctC6GOIA">
+      <appliedProfile href="pathmap://SysML15_PROFILES/SysML.profile.uml#SysML"/>
+    </profileApplication>
+  </uml:Model>
+  <sysml:Block xmi:id="_9OXMUN2OEe-4-bctC6GOIA" base_Class="_9OJw8N2OEe-4-bctC6GOIA"/>
+  <sysml:ValueType xmi:id="_1L5tkN2VEe-e_5dgwr0T0g" base_DataType="_1L01EN2VEe-e_5dgwr0T0g"/>
+  <sysml:Block xmi:id="_srVGUN4nEe-tseZE84lY5g" base_Class="_srL8YN4nEe-tseZE84lY5g"/>
+</xmi:XMI>

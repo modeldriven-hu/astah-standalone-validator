@@ -8,11 +8,11 @@ public interface ValidationRule {
 
     Severity severity();
 
+    ValidationResult validate(ModelElement element) throws ValidationFailedException;
+
     enum Severity {
         INFO, WARNING, ERROR
     }
-
-    ValidationResult validate(ModelElement element) throws ValidationFailedException;
 
     enum ValidationResult {
         VALID, INVALID, SKIPPED

@@ -2,6 +2,7 @@ package hu.modeldriven.astah.axmz.emf.element;
 
 import com.change_vision.jude.api.inf.exception.InvalidEditingException;
 import com.change_vision.jude.api.inf.model.*;
+import hu.modeldriven.astah.axmz.emf.ModelAsXML;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.VisibilityKind;
 
@@ -71,7 +72,7 @@ public class EMFNamedElement extends EMFElement implements INamedElement {
 
     @Override
     public String getDefinition() {
-        throw new NotImplementedException();
+        return ModelAsXML.getInstance().getDefinition(element);
     }
 
     @Override

@@ -10,7 +10,11 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
+import org.w3c.dom.Document;
 
+import javax.xml.XMLConstants;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
 import java.util.HashMap;
 
 public class ModelFromXMI {
@@ -21,8 +25,26 @@ public class ModelFromXMI {
         this.path = xmiFilePath;
     }
 
-    public EList<EObject> contents() {
+    public ModelContent contents() {
+        return new ModelContent(xmlParsedModel(), emfParsedModel());
+    }
+
+    private Document xmlParsedModel() {
+        try {
+            var factory = DocumentBuilderFactory.newInstance();
+            factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+            var builder = factory.newDocumentBuilder();
+            var document = builder.parse(new File(this.path));
+            document.getDocumentElement().normalize();
+            return document;
+        } catch (Exception e) {
+            throw new ModelParseException(e);
+        }
+    }
+
+    private EList<EObject> emfParsedModel() {
         var resourceSet = new ResourceSetImpl();
+
         UMLResourcesUtil.init(resourceSet);
 
         var registry = Resource.Factory.Registry.INSTANCE;
@@ -35,17 +57,14 @@ public class ModelFromXMI {
         var resource = resourceSet.createResource(URI.createFileURI(this.path));
 
         try {
-
             var options = new HashMap<>();
             options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
             options.put(XMLResource.OPTION_EXTENDED_META_DATA, new SysMLExtendedMetaData(EPackage.Registry.INSTANCE));
 
             resource.load(options);
             return resource.getContents();
-
         } catch (Exception e) {
             throw new ModelParseException(e);
         }
     }
-
 }
